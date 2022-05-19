@@ -27,7 +27,7 @@ At its core, *Semantic Line Breaks* (SemBr) simply means complying to one rule:
 
 When you have the `Strict Line Breaks` settings enabled in Obsidian, single line breaks are ignored, meaning that in Reading View, the text is displayed normally.
 
-Using Semantic line breaks has three advantages:
+Using semantic line breaks has three advantages:
 1. Text is broken up into units of thought, which can be helpful for writing and editing text.
 2. Most tools in Obsidian work on a per-line-basis, for example `Swap Line Up`. While useful for lists and outlines, those commands are essentially useless when writing prose, since your lines are actually entire paragraphs consisting of multiple sentences. With Semantic line breaks, every line roughly equals a sentence, so that all those line-based commands now work on a per-sentence-basis. (This also applies to vim mode.)
 3. [Diff Views](https://obsidian.md/plugins?id=obsidian-version-history-diff) also become much more usable, since they now indicate changes in sentences instead of whole paragraphs.
@@ -44,10 +44,12 @@ Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turn
 - Dataview inline attributes (`key:: value`) are ignored.
 - The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected.
 - Markdown footnotes keys at the end of a sentence are factored in.
+- There is a minimum of 10 characters before a semantic line break is applied, to avoid commas within enumerations getting line breaks. 
 
 ### Current Limitations
 - Punctuation in tables will result in a badly formatted table.
 - Code blocks are currently not respected by this plugin.
+- Even with the minimum of 10 characters, the plugin will have a few false positives with enumerations.
 
 ## Installation
 Right now, the plugin is still in beta. It can be installed with the [BRAT Plugin](https://github.com/TfTHacker/obsidian42-brat).
