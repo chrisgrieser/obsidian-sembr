@@ -5,13 +5,15 @@
 [Obsidian](https://obsidian.md/) Plugin for Semantic Line Breaks (SemBr)
 
 ## Table of Contents
-<!-- MarkdownTOC levels="2" -->
+<!-- MarkdownTOC -->
 
 - [What are Semantic Line Breaks?](#what-are-semantic-line-breaks)
 - [What does this plugin do?](#what-does-this-plugin-do)
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [About the Developer](#about-the-developer)
+	- [Profiles](#profiles)
+	- [Donate](#donate)
 
 <!-- /MarkdownTOC -->
 
@@ -30,9 +32,19 @@ Using Semantic line breaks has two advantages:
 [You can read more on Semantic Line Breaks here.](https://sembr.org/)
 
 ## What does this plugin do?
-Right now, it simply adds one command/hotkey: `Toggle Semantic Line Breaks`, which turns your prose text into "semantic-line-breaked" text.
+Right now, it simply adds one command/hotkey: `Toggle Semantic Line Breaks`, which turns your prose text into "semantically-line-broken" text. When the note already has semantic line breaks, the command will turn text back into "normal-line-broken" text.
 
 ![demo semantic line breaks](/assets/demo-sembr.gif)
+
+__The plugin ensures__
+- YAML Headers are left untouched.
+- [Markdown's Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected, meaning that line breaks preceded by two (or more) spaces are preserved.
+- Dataview inline attributes (`key:: value`) are preserved.
+- Markdown footnotes at the end of a sentence are factored in.
+
+__Caveats & limitations__
+- Code blocks are not factored in by this plugin.
+- Various cases of punctuation in tables will also in a badly formatted table.
 
 ## Installation
 Right now, the plugin is still in beta. It can be installed with the [BRAT Plugin](https://github.com/TfTHacker/obsidian42-brat).
