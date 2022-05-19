@@ -30,7 +30,7 @@ When you have the `Strict Line Breaks` settings enabled in Obsidian, single line
 Using Semantic line breaks has three advantages:
 1. Text is broken up into units of thought, which can be helpful for writing and editing text.
 2. Most tools in Obsidian work on a per-line-basis, for example `Swap Line Up`. While useful for lists and outlines, those commands are essentially useless when writing prose, since your lines are actually entire paragraphs consisting of multiple sentences. With Semantic line breaks, every line roughly equals a sentence, so that all those line-based commands now work on a per-sentence-basis. (This also applies to vim mode.)
-3. [Diff Views](https://obsidian.md/plugins?id=obsidian-version-history-diff) also become much more usable, since they now indicate changes in sentences instead of whole paragraphs. 
+3. [Diff Views](https://obsidian.md/plugins?id=obsidian-version-history-diff) also become much more usable, since they now indicate changes in sentences instead of whole paragraphs.
 
 [You can read more on Semantic Line Breaks here.](https://sembr.org/)
 
@@ -43,7 +43,7 @@ Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turn
 - YAML Headers are ignored.
 - Dataview inline attributes (`key:: value`) are ignored.
 - The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected.
-- Markdown footnotes keys at the end of a sentence are factored in. 
+- Markdown footnotes keys at the end of a sentence are factored in.
 
 ### Current Limitations
 - Punctuation in tables will result in a badly formatted table.

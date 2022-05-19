@@ -1,3 +1,5 @@
+- 2022-05-20	release 0.5.2
+- 2022-05-20	deconvert from sembr even without trailing whitespace (#4)
 - 2022-05-19	release 0.5.1
 - 2022-05-19	fix #2
 - 2022-05-19	fix #1
