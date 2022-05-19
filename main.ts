@@ -27,7 +27,7 @@ export default class SemBr extends Plugin {
 		if (!noteContent.endsWith("\n")) noteContent += "\n";
 
 		// Toggle SemBr
-		const isSemanticLineBreaked = /[.,:;–?!] \n(?!\n)/.test(noteContent);
+		const isSemanticLineBreaked = /[.,:;?!—] \n(?!\n)/.test(noteContent);
 		if (isSemanticLineBreaked) {
 			noteContent = noteContent
 				.replace (/(?!^)([^ ] )\n(?!\n)/gm, "$1");
@@ -36,7 +36,7 @@ export default class SemBr extends Plugin {
 		else {
 			// respecting Markdown two-space-rule & footnotes & dataview inline attributes
 			noteContent = noteContent
-				.replace (/([^\]:][.,:;–?!brew install --cask copyq](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
+				.replace (/([^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
 			noticeText = "Semantic Line Breaks applied.";
 		}
 
