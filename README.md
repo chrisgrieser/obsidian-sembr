@@ -29,7 +29,7 @@ When you have the `Strict Line Breaks` settings enabled in Obsidian, single line
 
 Using semantic line breaks has three advantages:
 1. __Paragraphs are broken up into units of thought__. This can be helpful for writing and editing text. Think [Atomic Notes](https://zettelkasten.de/posts/create-zettel-from-reading-notes/) but on the level of thoughts.
-2. Most tools in Obsidian work on a per-line-basis, for example `Swap Line Up`. While useful for outlines, those commands are basically useless when writing prose, since your lines are actually entire paragraphs consisting of multiple sentences. With Semantic line breaks, every line roughly equals a sentence, so that all those __line-based commands now work on a per-sentence-basis__. (This includes most vim commands.)
+2. Most tools in Obsidian work on a per-line-basis, for example `Swap Line Up`. While useful for outlines, those commands are basically useless when writing prose, since your lines are actually entire paragraphs consisting of multiple sentences. With semantic line breaks, every line roughly equals a sentence, so that all those __line-based commands now work on a per-sentence-basis__. (This includes most vim commands.)
 3. __Diff Views__, for example using the [Version History Diff Plugin](https://obsidian.md/plugins?id=obsidian-version-history-diff), __become much more useful__, since they now indicate changes in sentences instead of whole paragraphs. [See here for a brief example.](https://github.com/bobheadxi/readable#rationale)
 
 [You can read more on Semantic Line Breaks here.](https://sembr.org/)
