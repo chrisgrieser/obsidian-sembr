@@ -1,6 +1,6 @@
 import { Plugin, Editor, Notice } from "obsidian";
 
-export default class SemBr extends Plugin {
+export default class ObsidianSemBr extends Plugin {
 
 	async onload() {
 		console.log("Semantic Line Breaker Plugin loaded.");

@@ -28,9 +28,9 @@ At its core, *Semantic Line Breaks* (SemBr) simply means complying to one rule:
 When you have the `Strict Line Breaks` settings enabled in Obsidian, single line breaks are ignored, meaning that in Reading View, the text is displayed normally.
 
 Using Semantic line breaks has three advantages:
-1. Text is broken up into unit of thought, which can be helpful for writing and editing text.
-2. Most tools in Obsidian (or other text editors in general) work on a per-line-basis, e.g. `Swap Line Up`. While useful for notes and outlines, those commands are virtually useless when writing prose where your lines are essentially paragraphs consisting of multiple sentences. With Semantic line breaks, every line roughly equals a sentence, so that all those line-based commands now work on sentences. (Notably, this advantage also applies to vim mode.)
-3. [Diff Views](https://obsidian.md/plugins?id=obsidian-version-history-diff) (i.e. comparing the current version of your writing with older versions) become much more usable, since now changes in sentences and not whole paragraphs are indicated.
+1. Text is broken up into units of thought, which can be helpful for writing and editing text.
+2. Most tools in Obsidian work on a per-line-basis, for example `Swap Line Up`. While useful for lists and outlines, those commands are essentially useless when writing prose, since your lines are actually entire paragraphs consisting of multiple sentences. With Semantic line breaks, every line roughly equals a sentence, so that all those line-based commands now work on a per-sentence-basis. (This also applies to vim mode.)
+3. [Diff Views](https://obsidian.md/plugins?id=obsidian-version-history-diff) also become much more usable, since they now indicate changes in sentences instead of whole paragraphs. 
 
 [You can read more on Semantic Line Breaks here.](https://sembr.org/)
 
