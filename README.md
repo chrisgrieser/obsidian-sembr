@@ -23,7 +23,7 @@
 At its core, *Semantic Line Breaks* (SemBr) simply means complying to one rule:
 
 > When writing text with a compatible markup language, add a line break after each substantial unit of thought.  
-> [sembr.org](https://sembr.org/)
+> — [sembr.org](https://sembr.org/)
 
 When you have the `Strict Line Breaks` settings enabled in Obsidian, single line breaks are ignored, meaning that in Reading View, the text is displayed normally.
 
