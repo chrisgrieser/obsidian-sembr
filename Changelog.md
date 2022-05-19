@@ -1,3 +1,4 @@
+- 2022-05-20	release 0.5.6
 - 2022-05-20	release 0.5.5
 - 2022-05-20	add minimum line length of 10 chars before sembr applies
 - 2022-05-20	release 0.5.4

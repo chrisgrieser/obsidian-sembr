@@ -44,7 +44,7 @@ Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turn
 - Dataview inline attributes (`key:: value`) are ignored.
 - The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected.
 - Markdown footnotes keys at the end of a sentence are factored in.
-- There is a minimum of 15 characters before a semantic line break is applied, to avoid commas within enumerations getting line breaks. 
+- There is a minimum of 15 characters before a semantic line break is applied, to avoid commas within enumerations getting line breaks.
 
 ### Current Limitations
 - Punctuation in tables will result in a badly formatted table.
