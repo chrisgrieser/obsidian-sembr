@@ -2,13 +2,15 @@
 
 <!-- ![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-sembr/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-sembr?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md) -->
 
-[Obsidian](https://obsidian.md/) Plugin for Semantic Line Breaks (SemBr)
+[Obsidian](https://obsidian.md/) Plugin to apply and remove Semantic Line Breaks (SemBr).
 
 ## Table of Contents
 <!-- MarkdownTOC -->
 
 - [What are Semantic Line Breaks?](#what-are-semantic-line-breaks)
-- [What does this plugin do?](#what-does-this-plugin-do)
+- [What Does this Plugin Do?](#what-does-this-plugin-do)
+	- [Considerations](#considerations)
+	- [Caveats & Limitations](#caveats--limitations)
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [About the Developer](#about-the-developer)
@@ -24,25 +26,25 @@ At its core, "Semantic Line Breaks" (SemBr) simply means complying to one rule:
 
 When you have the `Strict Line Breaks` settings enabled in Obsidian, single line breaks are ignored, meaning that in Reading View, the text is displayed normally.
 
-Using Semantic line breaks has two advantages:
+Using Semantic line breaks has three advantages:
 1. Text is broken up into unit of thought, which can be helpful for writing and editing text.
 2. Most tools in Obsidian (or other text editors in general) work on a per-line-basis, e.g. `Swap Line Up`. While useful for notes and outlines, those commands are virtually useless when writing prose where your lines are essentially paragraphs consisting of multiple sentences. With Semantic line breaks, every line roughly equals a sentence, so that all those line-based commands now work on sentences. (Notably, this advantage also applies to vim mode.)
 3. [Diff Views](https://obsidian.md/plugins?id=obsidian-version-history-diff) (i.e. comparing the current version of your writing with older versions) become much more usable, since now changes in sentences and not whole paragraphs are indicated.
 
 [You can read more on Semantic Line Breaks here.](https://sembr.org/)
 
-## What does this plugin do?
+## What Does this Plugin Do?
 Right now, it simply adds one command/hotkey: `Toggle Semantic Line Breaks`, which turns your prose text into "semantically-line-broken" text. When the note already has semantic line breaks, the command will turn text back into "normal-line-broken" text.
 
 ![demo semantic line breaks](/assets/demo-sembr.gif)
 
-__The plugin ensures__
+### Considerations
 - YAML Headers are left untouched.
 - [Markdown's Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected, meaning that line breaks preceded by two (or more) spaces are preserved.
 - Dataview inline attributes (`key:: value`) are preserved.
 - Markdown footnotes at the end of a sentence are factored in.
 
-__Caveats & limitations__
+### Caveats & Limitations
 - Code blocks are not factored in by this plugin.
 - Various cases of punctuation in tables will also in a badly formatted table.
 

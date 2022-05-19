@@ -3,7 +3,7 @@
 	"name": "Semantic Line Breaker",
 	"version": "0.5.0",
 	"minAppVersion": "0.13.19",
-	"description": "Obsidian Plugin for Semantic Line Breaks (SemBr)",
+	"description": "Apply and remove Semantic Line Breaks (SemBr).",
 	"author": "pseudometa",
 	"authorUrl": "https://chris-grieser.de/",
 	"isDesktopOnly": false
