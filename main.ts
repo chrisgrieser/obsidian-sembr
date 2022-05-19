@@ -30,7 +30,7 @@ export default class ObsidianSemBr extends Plugin {
 		const isSemanticLineBreaked = /[.,:;?!—] \n(?!\n)/.test(noteContent);
 		if (isSemanticLineBreaked) {
 			noteContent = noteContent
-				.replace (/(?!^)([^ ] )\n(?!\n)/gm, "$1");
+				.replace (/(\S) ?\n(?!\n)/gm, "$1");
 			noticeText = "Semantic Line Breaks removed.";
 		}
 		else {
