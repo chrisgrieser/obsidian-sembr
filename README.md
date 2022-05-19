@@ -1,6 +1,6 @@
 # Semantic Line Breaker
 
-<!-- ![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-sembr/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-sembr?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md) -->
+![](https://img.shields.io/github/downloads/chrisgrieser/obsidian-sembr/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/obsidian-sembr?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](Changelog.md)
 
 [Obsidian](https://obsidian.md/) Plugin to apply and remove Semantic Line Breaks (SemBr).
 
