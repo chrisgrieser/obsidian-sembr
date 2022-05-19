@@ -24,24 +24,27 @@ export default class ObsidianSemBr extends Plugin {
 		if (yamlHeader) noteContent = noteContent.replace(yamlHeader[0], "");
 
 		// ensure line break at end of file to recognize last line properly
-		if (!noteContent.endsWith("\n")) noteContent += "\n";
+		noteContent = noteContent.replace(/\n+$/, "");
 
 		// Toggle SemBr
 		const isSemanticLineBreaked = /[.,:;?!—] ?\n(?!\n)/.test(noteContent);
+
 		if (isSemanticLineBreaked) {
 			noteContent = noteContent
-				.replace (/(\S) ?\n(?!\n)/gm, "$1");
+				.replace (/(\S) ?\n(?!\n)/gm, "$1 ");
 			noticeText = "Semantic Line Breaks removed.";
-		}
-		else {
+		} else {
 			// respecting Markdown two-space-rule & footnotes & dataview inline attributes
 			noteContent = noteContent
-				.replace (/([^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
+				.replace (/(.{0,20}?[^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
 			noticeText = "Semantic Line Breaks applied.";
 		}
 
 		// put YAML back
 		if (yamlHeader) noteContent = yamlHeader[0] + noteContent;
+
+		// add line break ad document end back
+		noteContent += "\n";
 
 		// write note
 		editor.setValue(noteContent);
