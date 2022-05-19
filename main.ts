@@ -36,7 +36,7 @@ export default class ObsidianSemBr extends Plugin {
 		} else {
 			// respecting Markdown two-space-rule & footnotes & dataview inline attributes
 			noteContent = noteContent
-				.replace (/(.{0,20}?[^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
+				.replace (/(.{10,}?[^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
 			noticeText = "Semantic Line Breaks applied.";
 		}
 
