@@ -9,8 +9,8 @@
 
 - [What are Semantic Line Breaks?](#what-are-semantic-line-breaks)
 - [What Does this Plugin Do?](#what-does-this-plugin-do)
-	- [Considerations](#considerations)
-	- [Caveats & Limitations](#caveats--limitations)
+- [Additions to the Official SemBr-Specification](#additions-to-the-official-sembr-specification)
+	- [Current Limitations](#current-limitations)
 - [Installation](#installation)
 - [Contribute](#contribute)
 - [About the Developer](#about-the-developer)
@@ -20,9 +20,10 @@
 <!-- /MarkdownTOC -->
 
 ## What are Semantic Line Breaks?
-At its core, "Semantic Line Breaks" (SemBr) simply means complying to one rule:
+At its core, *Semantic Line Breaks* (SemBr) simply means complying to one rule:
 
-> When writing text with a compatible markup language, add a line break after each substantial unit of thought.
+> When writing text with a compatible markup language, add a line break after each substantial unit of thought.  
+> [sembr.org](https://sembr.org/)
 
 When you have the `Strict Line Breaks` settings enabled in Obsidian, single line breaks are ignored, meaning that in Reading View, the text is displayed normally.
 
@@ -34,24 +35,24 @@ Using Semantic line breaks has three advantages:
 [You can read more on Semantic Line Breaks here.](https://sembr.org/)
 
 ## What Does this Plugin Do?
-Right now, it simply adds one command/hotkey: `Toggle Semantic Line Breaks`, which turns your prose text into "semantically-line-broken" text. When the note already has semantic line breaks, the command will turn text back into "normal-line-broken" text.
+Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turns your prose into "semantic-line-broken" text. When the note already has semantic line breaks, the command will turn text back into "normal-line-broken" text.
 
 ![demo semantic line breaks](/assets/demo-sembr.gif)
 
-### Considerations
-- YAML Headers are left untouched.
-- [Markdown's Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected, meaning that line breaks preceded by two (or more) spaces are preserved.
-- Dataview inline attributes (`key:: value`) are preserved.
-- Markdown footnotes at the end of a sentence are factored in.
+## Additions to the Official SemBr-Specification
+- YAML Headers are ignored.
+- Dataview inline attributes (`key:: value`) are ignored.
+- The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected.
+- Markdown footnotes keys at the end of a sentence are factored in. 
 
-### Caveats & Limitations
-- Code blocks are not factored in by this plugin.
-- Various cases of punctuation in tables will also in a badly formatted table.
+### Current Limitations
+- Punctuation in tables will result in a badly formatted table.
+- Code blocks are currently not respected by this plugin.
 
 ## Installation
 Right now, the plugin is still in beta. It can be installed with the [BRAT Plugin](https://github.com/TfTHacker/obsidian42-brat).
 
-When published,it will be available in Obsidian's Community Plugin Browser via: `Settings` → `Community Plugins` → `Browse` → Search for *"Semantic Line Breaker"*
+When published, it will be available in Obsidian's Community Plugin Browser via: `Settings` → `Community Plugins` → `Browse` → Search for *"Semantic Line Breaker"*
 
 ## Contribute
 Please use the [`.eslintrc` configuration located in the repository](.eslintrc) and run eslint before doing a pull request, and please do *not* use `prettier`. 🙂
