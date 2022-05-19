@@ -35,8 +35,9 @@ export default class ObsidianSemBr extends Plugin {
 			noticeText = "Semantic Line Breaks removed.";
 		} else {
 			// respecting Markdown two-space-rule & footnotes & dataview inline attributes
+			// the "15" denotes the minimum number of characters
 			noteContent = noteContent
-				.replace (/(.{10,}?[^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
+				.replace (/([^.,]{15,}?[^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
 			noticeText = "Semantic Line Breaks applied.";
 		}
 
