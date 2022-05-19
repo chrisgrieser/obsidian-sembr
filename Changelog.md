@@ -1,0 +1,5 @@
+- 2022-05-19	release 0.5.0
+- 2022-05-19	first prototype
+- 2022-05-19	description of sembr
+- 2022-05-19	filled out basic info
+- 2022-05-19	Initial commit

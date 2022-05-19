@@ -1,52 +1,63 @@
 #!/bin/zsh
+
 # Release Obsidian Plugin
 # https://forum.obsidian.md/t/using-github-actions-to-release-plugins/7877
 # https://marcus.se.net/obsidian-plugin-docs/publishing/release-your-plugin-with-github-actions
-# ---------
+
+# Requirements
+# - markdownlint
+# - eslint
 
 # ensure relevant files exist
 if [[ ! -f "./manifest.json" ]] ; then
 	echo "manifest.json does not exist yet"
-	exit
+	exit 1
 fi
 if [[ ! -f "./versions.json" ]] ; then
 	echo "versions.json does not exist yet"
-	exit
+	exit 1
+fi
+if [[ ! -f "./package.json" ]] ; then
+	echo "package.json does not exist yet"
+	exit 1
 fi
 if [[ ! -f "./.github/workflows/release.yml" ]] ; then
 	echo "/.github/workflows/release.yml does not exist yet"
-	exit
+	exit 1
 fi
 
-# Lint
-cd "$(dirname "$0")" || exit
-eslint --fix ./*.ts
-markdownlint --fix ./*.md
-markdown-link-check ./README.md
-
-# get version number from the manifest of the latest release
-lastVersion=$(grep "version" "./manifest.json" | cut -d\" -f4)
-echo "last version: $lastVersion"
-
-# Ask for new version number
-echo -n "next version: "
-read -r nextVersion
+# Prompt for version number, if not entered
+nextVersion="$*"
+currentVersion=$(grep "version" "./manifest.json" | cut -d\" -f4)
+echo "current version: $currentVersion"
+echo -n "   next version: "
+if [[ -z "$nextVersion" ]]; then
+	read -r nextVersion
+else
+	echo "$nextVersion"
+fi
 echo ""
+
+# Lint
+cd "$(dirname "$0")" || exit 1
+eslint . --fix --ext=ts # to not lint the main.js files
+markdownlint --fix ./README.md
 
 # set version number in `manifest.json`
 sed -E -i '' "s/\"version\".*/\"version\": \"$nextVersion\",/" "manifest.json"
+sed -E -i '' "s/\"version\".*/\"version\": \"$nextVersion\",/" "package.json"
 
 # add version number in `versions.json`, assuming same compatibility
 grep -Ev "^$" "versions.json" | grep -v "}" | sed -e '$ d' > temp
 minObsidianVersion=$(grep -Ev "^$" "versions.json" | grep -v "}" | tail -n1 | cut -d\" -f4)
 # shellcheck disable=SC2129
-echo "  \"$lastVersion\": \"$minObsidianVersion\"," >> temp
+echo "  \"$currentVersion\": \"$minObsidianVersion\"," >> temp
 echo "  \"$nextVersion\": \"$minObsidianVersion\"" >> temp
 echo "}" >> temp
 mv temp versions.json
 
 # update changelog
-echo "- ""$(date +"%Y-%m-%d")""	release $nextVersion" > ./Changelog.md
+echo "- $(date +"%Y-%m-%d")	release $nextVersion" > ./Changelog.md
 git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "minor$" | grep -Ev "patch$" | grep -Ev "typos?$" | grep -v "refactoring" | grep -v "Add files via upload" | grep -Ev "\tDelete" | grep -Ev "\tUpdate.*\.md" | sed -E "s/\t\+ /\t/g" >> ./Changelog.md
 
 # push the manifest and versions JSONs
