@@ -27,7 +27,7 @@ export default class ObsidianSemBr extends Plugin {
 		if (!noteContent.endsWith("\n")) noteContent += "\n";
 
 		// Toggle SemBr
-		const isSemanticLineBreaked = /[.,:;?!—] \n(?!\n)/.test(noteContent);
+		const isSemanticLineBreaked = /[.,:;?!—] ?\n(?!\n)/.test(noteContent);
 		if (isSemanticLineBreaked) {
 			noteContent = noteContent
 				.replace (/(\S) ?\n(?!\n)/gm, "$1");
