@@ -1,3 +1,6 @@
+- 2022-05-19	release 0.5.1
+- 2022-05-19	fix #2
+- 2022-05-19	fix #1
 - 2022-05-19	release 0.5.0
 - 2022-05-19	first prototype
 - 2022-05-19	description of sembr
