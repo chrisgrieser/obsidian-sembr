@@ -30,7 +30,7 @@ export default class ObsidianSemBr extends Plugin {
 
 		if (isSemanticLineBreaked) {
 			noteContent = noteContent
-				.replace (/(\S) ?\n(?!\n)/gm, "$1 ");
+				.replace (/([.,:;?!—]) ?\n(?!\n)/gm, "$1 ");
 		} else {
 			// respecting Markdown two-space-rule & footnotes & dataview inline attributes
 			// the "15" denotes the minimum number of characters
