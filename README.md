@@ -9,7 +9,7 @@
 
 - [What are Semantic Line Breaks?](#what-are-semantic-line-breaks)
 - [What Does this Plugin Do?](#what-does-this-plugin-do)
-- [Additions to the Official SemBr-Specification](#additions-to-the-official-sembr-specification)
+	- [Additions to the Official SemBr-Specification](#additions-to-the-official-sembr-specification)
 	- [Current Limitations](#current-limitations)
 - [Installation](#installation)
 - [Contribute](#contribute)
@@ -39,7 +39,7 @@ Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turn
 
 ![demo semantic line breaks](/assets/demo-sembr.gif)
 
-## Additions to the Official SemBr-Specification
+### Additions to the Official SemBr-Specification
 - YAML Headers are ignored.
 - Dataview inline attributes (`key:: value`) are ignored.
 - The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected.
