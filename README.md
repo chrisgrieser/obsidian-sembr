@@ -40,16 +40,16 @@ Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turn
 ![demo semantic line breaks](/assets/demo-sembr.gif)
 
 ### Additions to the Official SemBr-Specification
-- YAML Headers are ignored.
-- Dataview inline attributes (`key:: value`) are ignored.
-- The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected.
-- Markdown footnotes keys at the end of a sentence are factored in.
-- There is a minimum of 15 characters before a semantic line break is applied, to avoid commas within enumerations getting line-breaked.
+- YAML Headers are ignored
+- Dataview inline attributes (`key:: value`) are ignored
+- The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected
+- Markdown footnotes keys at the end of a sentence are factored in
+- There is a minimum of 15 characters before a semantic line break is applied, to avoid commas within enumerations getting line-breaked
 
 ### Current Limitations
-- Punctuation in tables will result in a badly formatted table.
-- Code blocks are currently not respected by this plugin.
-- Even with the minimum of 15 characters, the plugin will have a few false positives with enumerations.
+- Punctuation in tables will result in a badly formatted table
+- Code blocks are currently not respected by this plugin
+- Even with the minimum of 15 characters, the plugin will have a few false positives with enumerations
 
 ## Installation
 Right now, the plugin is still in beta. It can be installed with the [BRAT Plugin](https://github.com/TfTHacker/obsidian42-brat).
