@@ -9,7 +9,7 @@
 
 - [What are Semantic Line Breaks?](#what-are-semantic-line-breaks)
 - [What Does this Plugin Do?](#what-does-this-plugin-do)
-	- [Additions to the Official SemBr-Specification](#additions-to-the-official-sembr-specification)
+	- [Additions to the official SemBr-Specification](#additions-to-the-official-sembr-specification)
 	- [Current Limitations](#current-limitations)
 - [Installation](#installation)
 - [Contribute](#contribute)
@@ -29,27 +29,25 @@ When you have the `Strict Line Breaks` settings enabled in Obsidian, single line
 
 Using semantic line breaks has three advantages:
 1. __Paragraphs are broken up into units of thought__. This can be helpful for writing and editing text. Think [Atomic Notes](https://zettelkasten.de/posts/create-zettel-from-reading-notes/) but on the level of thoughts.
-2. Most tools in Obsidian work on a per-line-basis, for example `Swap Line Up`. While useful for outlines, those commands are basically useless when writing prose, since your lines are actually entire paragraphs consisting of multiple sentences. With semantic line breaks, every line roughly equals a sentence, so that all those __line-based commands now work on a per-sentence-basis__. (This includes most vim commands.)
+2. Most tools in Obsidian work on a per-line-basis, for example `Swap Line Up`. While useful for outlines, those commands are basically useless when writing prose, since your lines are often entire paragraphs consisting of multiple sentences. With semantic line breaks, every line roughly equals a sentence, so that all those __line-based commands now work on a per-sentence-basis__. (This includes most vim commands.)
 3. __Diff Views__, for example using the [Version History Diff Plugin](https://obsidian.md/plugins?id=obsidian-version-history-diff), __become much more useful__, since they now indicate changes in sentences instead of whole paragraphs. [See here for a brief example.](https://github.com/bobheadxi/readable#rationale)
 
 [You can read more on Semantic Line Breaks here.](https://sembr.org/)
 
 ## What Does this Plugin Do?
-Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turns your prose into "semantic-line-broken" text. When the note already has semantic line breaks, the command will turn text back into "normal-line-broken" text.
+Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turns your prose into "semantic-line-broken" text. When the note already has semantic line breaks, the command will turn the text back into "normal-line-broken" text.
 
 ![demo semantic line breaks](/assets/demo-sembr.gif)
 
-### Additions to the Official SemBr-Specification
-- YAML Headers are ignored
-- Dataview inline attributes (`key:: value`) are ignored
-- The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected
-- Markdown footnotes keys at the end of a sentence are factored in
-- There is a minimum of 15 characters before a semantic line break is applied, to avoid commas within enumerations getting line-breaked
+### Additions to the official SemBr-Specification
+- YAML Headers, Dataview inline attributes (`key:: value`), and tables are ignored.
+- The [Markdown Two-Space Rule](https://daringfireball.net/projects/markdown/syntax#p) is respected.
+- Markdown footnote keys at the end of a sentence are factored in and preserved.
+- There is a minimum of 15 characters before a semantic line break is applied, to avoid commas within enumerations getting line-breaked.
 
 ### Current Limitations
-- Punctuation in tables will result in a badly formatted table
 - Code blocks are currently not respected by this plugin
-- Even with the minimum of 15 characters, the plugin will have a few false positives with enumerations
+- Even with the minimum of 15 characters, the plugin will have a few false positives when it comes to enumerations.
 
 ## Installation
 Right now, the plugin is still in beta. It can be installed with the [BRAT Plugin](https://github.com/TfTHacker/obsidian42-brat).
