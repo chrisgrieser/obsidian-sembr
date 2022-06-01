@@ -46,7 +46,8 @@ Right now, it simply adds one command, `Toggle Semantic Line Breaks`, which turn
 - There is a minimum of 15 characters before a semantic line break is applied, to avoid commas within enumerations getting line-breaked.
 
 ### Current Limitations
-- Code blocks are currently not respected by this plugin
+- Indented Code blocks (as opposed to fenced code blocks) are currently not respected by this plugin.
+- Prose text with pipe characters (`|`) is ignored, since it's interpreted as table as a precaution.
 - Even with the minimum of 15 characters, the plugin will have a few false positives when it comes to enumerations.
 
 ## Installation
