@@ -20,7 +20,7 @@
 <!-- /MarkdownTOC -->
 
 ## What are Semantic Line Breaks?
-At its core, *Semantic Line Breaks* (SemBr) simply means complying to one rule:
+At its core, *Semantic Line Breaks* (SemBr) simply means abiding by one rule:
 
 > When writing text with a compatible markup language, add a line break after each substantial unit of thought.  
 > — [sembr.org](https://sembr.org/)

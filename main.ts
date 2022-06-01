@@ -1,4 +1,4 @@
-import { Plugin, Editor, Notice } from "obsidian";
+import { Plugin, Editor } from "obsidian";
 
 export default class ObsidianSemBr extends Plugin {
 
@@ -32,16 +32,22 @@ export default class ObsidianSemBr extends Plugin {
 			noteContent = noteContent
 				.replace (/([.,:;?!—]) ?\n(?!\n)/gm, "$1 ");
 		} else {
-			// respecting Markdown two-space-rule & footnotes & dataview inline attributes
-			// the "15" denotes the minimum number of characters
 			noteContent = noteContent
-				.replace (/([^.,]{15,}?[^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| )/gm, "$1\n"); // yep, I do like regex, lol
+				.replace (/([^.,]{15,}?[^\]:][.,:;?!—](?: ?\[.+\])? )(?!\n\n| |.*\|.*$)/gm, "$1\n");
+			//             (1        )(2   )(3      )(4         )   (5               )
+			// 1: 15 chars minimum (non-greedy), all without another , or .  occuring
+			// 2: not followed by ]: (footnotes) or :: (dataview inline fields)
+			// 3: ending with a punctuation
+			// 4: optionally followed by a trailing space or a footnote
+			// 5: not followed by two line breaks (blank line),
+			//    another space (Markdown Two-Space Rule),
+			//    or a Pipe character somewhere till the end of the line (Table)
 		}
 
 		// put YAML back
 		if (yamlHeader) noteContent = yamlHeader[0] + noteContent;
 
-		// add line break ad document end back
+		// add line break at document end back
 		noteContent += "\n";
 
 		// write note
