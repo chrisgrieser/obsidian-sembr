@@ -1,3 +1,5 @@
+- 2022-06-07	release 0.7.0
+- 2022-06-07	prevent splitting footnotes & pandoc citations
 - 2022-06-01	release 0.6.0
 - 2022-06-01	ignore (fenced) code blocks
 - 2022-05-20	update promo screenshot
